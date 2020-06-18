@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image:url(../images/nature.jpg);
+    -webkit-background-size:cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    font-family: 'Josefin Sans', sans-serif;
+
+   
+}
+
+
+#mtext {
+    background-color:rgba(0, 0, 0, 0.6);
+    border: 5px solid gray;
+    margin-top: 7%;
+    color: #fff;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+    padding: 30px;
+    margin-bottom: 20px;
+    
+}
+#mtext a{
+    text-decoration: none;
+    color: white;
+}
+#mtext a:hover{
+    color: #32e0c4;
+}
+#mtext h1{
+    font-size: 2.6rem;
+}
+
+@media only screen and (max-width: 1127px) {
+#mtext {
+    margin-top: 12%;
+}
+}
+ @media only screen and (max-width: 913px) {
+#mtext {
+    margin-top: 15%;
+}
+}
+
+@media only screen and (max-width: 733px) {
+#mtext {
+    margin-top: 18%;
+}
+}
+@media only screen and (max-width: 565px) {
+#mtext {
+    margin-top: 20%;
+}
+}
+
+.hamburger-menu {
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+}
+
+.line {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.8s;
+
+}
+.change .line-1 {
+    transform: rotateZ(-405deg) translate(-8px,6px);
+
+}
+.change .line-3 {
+    transform: rotateZ(405deg) translate(-8px,-6px);
+    
+}
+.change .line-2 {
+    opacity: 0;
+} 
+
+
+.hamburger-menu1{
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.line1 {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.8s;
+}
+
+.change1 .line-11 {
+    transform: rotateZ(405deg) translate(8px,6px);
+
+}
+.change1 .line-33 {
+    transform: rotateZ(-405deg) translate(8px,-6px);
+    
+} 
+.change1 .line-22 {
+    opacity: 0;
+}
+
+.mnavbar1 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0%;
+    right: -100%;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 0 0; 
+    transition: right 0.8s cubic-bezier(1,0,0,1);
+}
+.change1{
+    right: 0px;
+}
+
+.mnavbar {
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    left: -300px;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 60% 20% 0; 
+    transition: left 0.8s cubic-bezier(1,0,0,1);
+}
+.change {
+    left: 0;
+}
+
+.mnav-list {
+    text-align: left;
+}
+.mnav-item {
+    list-style: none;
+    margin: 25px;
+}
+
+.mnav-link {
+    text-decoration: none;
+    font-size: 32px;
+    color: #eee;
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
+    padding:  3px 0;
+}
+.mnav-link:hover {
+    text-decoration: none;
+    color: #fff;
+} 
+
+.mnav-link::before, .mnav-link::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+
+}
+
+.mnav-link::before{
+    top: 0;
+    transform-origin: right;
+}
+
+
+.mnav-link::after {
+       bottom: 0;
+    transform-origin: left;
+}
+
+.mnav-link:hover::before,
+.mnav-link:hover::after {
+    transform: scaleX(1);
+}
+
+
+.makeblur {
+    filter: blur(15px);
+    position: relative;
+    z-index: -12;
+}
+
+
+#sidebarAdj {
+    padding: 30px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* position: fixed; */
+    /* z-index: 12000; */
+    font-size: 25px !important;
+    color: white;
+}
+
+
+@media only screen and (max-width: 1127px) {
+#sidebarAdj {
+    margin-top: 12%;
+}
+}
+ @media only screen and (max-width: 913px) {
+#sidebarAdj {
+    margin-top: 15%;
+}
+}
+
+@media only screen and (max-width: 733px) {
+#sidebarAdj {
+    margin-top: 18%;
+}
+}
+@media only screen and (max-width: 565px) {
+#sidebarAdj {
+    margin-top: 20%;
+}
+}
+
+#commnetbody {
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 10px;
+    border-radius: 20px 20px;
+    font-size: 1.2rem;
+}
+
+#seperator {
+
+    border-top:8px dotted gray;
+    width: 10%;
+    margin: 0 45% 50px;
+
+}
+

@@ -1,0 +1,31 @@
+{% extends '../base.html' %}
+
+
+{% block title_block %}{{post.title}} {% endblock %}
+{% block content %}
+
+<h1><a href="{{post.get_absolute_url}}">{{post.title}}</a></h1>
+<p id="date"><i>Published On {{post.publish}} by, {{post.author|title}}.</i></p>
+{{post.body|linebreaks}}
+<br>
+<br>
+<a href="/{{post.id}}/share" class="btn btn-lg btn-outline-light" id="shareviaEmail">Share Post by Email !</a> <br><br>
+<hr id="seperator">
+    {% with comments.count as comment_count %}
+    <h2>{{comment_count}} comment{{comment_count|pluralize}} !</h2>
+    {% endwith %}
+    {% if comments %}
+    {% for comment in comments %}
+    <p>Comment by, {{comment.name}} on {{comment.created}} !</p>
+    <div id="commnetbody">{{comment.body|linebreaks}}</div>
+    {% endfor %}
+    {% endif %}
+    <br><br>
+    <h2>You can comment !</h2>
+    <form method="POST" >
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" class="btn btn-lg btn-outline-light" value="Comment !">
+    </form>
+
+{% endblock %}
